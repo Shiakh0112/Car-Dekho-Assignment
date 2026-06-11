@@ -7,20 +7,7 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
-
-const allowedOrigins = FRONTEND_URL.split(",").map((u) => u.trim());
-
-app.use(
-  cors({
-    origin: (origin, callback) =>
-      !origin || allowedOrigins.includes(origin)
-        ? callback(null, true)
-        : callback(new Error("cors backend")),
-    methods: ["GET", "POST"],
-    credentials: true,
-  }),
-);
+app.use(cors());
 app.use(express.json());
 
 const carRoutes = require("./routes/cars");
