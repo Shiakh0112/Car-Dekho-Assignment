@@ -6,7 +6,7 @@ import CompareBar from "../components/CompareBar";
 import { FaArrowLeft, FaCar, FaSearch, FaFilter, FaBookmark } from "react-icons/fa";
 import { MdSearchOff } from "react-icons/md";
 
-const API = import.meta.env.VITE_API_URL || "http://localhost:3000";
+const API = import.meta.env.VITE_API_URL || "https://car-dekho-assignment-4215.onrender.com";
 
 export default function Results() {
   const navigate = useNavigate();

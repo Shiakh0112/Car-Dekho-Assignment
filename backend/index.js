@@ -7,7 +7,7 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-const FRONTEND_URL = process.env.FONTEND_URL || "http://localhost:5173";
+const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
 
 const allowedOrigins = FRONTEND_URL.split(",").map((u) => u.trim());
 
@@ -18,7 +18,7 @@ app.use(
         ? callback(null, true)
         : callback(new Error("cors backend")),
     methods: ["GET", "POST"],
-    creadentials: true,
+    credentials: true,
   }),
 );
 app.use(express.json());
